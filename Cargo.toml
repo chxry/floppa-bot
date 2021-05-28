@@ -1,0 +1,16 @@
+[package]
+name = "floppa-bot"
+version = "0.1.0"
+authors = ["chxry"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+discord = { git = "https://github.com/Masterchef365/discord-rs", branch="send_file_patch" }
+reqwest = { version = "0.11.3", features = ["blocking"] }
+serde = { version = "1.0.126", features = ["derive"] }
+imagesize = "0.8.8"
+log = "0.4.14"
+simplelog = "0.10.0"
+toml = "0.5.8"
