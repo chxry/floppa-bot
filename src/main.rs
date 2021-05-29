@@ -28,6 +28,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
   let mut commands = Commands::new();
   commands.register_commands();
+  info!("Loaded commands: {}", commands);
 
   let (mut connection, _) = discord.connect()?;
   info!("Connected.");

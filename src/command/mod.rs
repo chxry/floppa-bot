@@ -1,7 +1,9 @@
 mod caption;
 mod help;
+mod info;
 
 use std::collections::HashMap;
+use std::fmt;
 use discord::Discord;
 use discord::model::Message;
 use log::error;
@@ -30,6 +32,7 @@ impl<'a> Commands<'a> {
   pub fn register_commands(&mut self) {
     self.register("help", help::help);
     self.register("caption", caption::caption);
+    self.register("info", info::info);
   }
 
   fn register(&mut self, fn_name: &'a str, function: CommandFn) {
@@ -59,5 +62,16 @@ impl<'a> Commands<'a> {
         })
         .unwrap();
     }
+  }
+}
+
+impl<'a> fmt::Display for Commands<'a> {
+  fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    let mut commands: String = "".to_string();
+    for key in self.commands.keys() {
+      commands.push_str(key);
+      commands.push_str(" ");
+    }
+    write!(f, "{}", commands)
   }
 }
