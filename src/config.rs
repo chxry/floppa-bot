@@ -8,6 +8,7 @@ use log::{info, error};
 pub struct BotConfig {
   pub token: &'static str,
   pub prefix: &'static str,
+  pub presence: &'static str,
 }
 
 #[allow(unused_must_use)]

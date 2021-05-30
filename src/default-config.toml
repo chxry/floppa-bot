@@ -1,3 +1,4 @@
 token = "TOKEN_HERE"
 # prefix is limited to one character otherwise there will be unexpected behaviour.
 prefix = "!"
+presence = "default presence"

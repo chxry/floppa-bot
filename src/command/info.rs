@@ -35,6 +35,11 @@ pub fn info(discord: &Discord, msg: &Message, _: Vec<&str>) -> Result<(), Box<dy
           format!("{} v{}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION")).as_str(),
           true,
         )
+        .field(
+          "**Source**",
+          "[Github](https://github.com/chxry/floppa-bot)",
+          true,
+        )
       })
       .footer(|b| footer(b, msg))
   })?;

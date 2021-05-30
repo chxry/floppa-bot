@@ -32,6 +32,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
   let (mut connection, _) = discord.connect()?;
   info!("Connected.");
+  connection.set_game_name(config.presence.to_string());
 
   loop {
     match connection.recv_event() {
